@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
+    "react-router": "^2.8.1",
     "react-scripts": "0.6.1"
   },
   "dependencies": {
