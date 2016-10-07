@@ -40,3 +40,5 @@ function definitions(state= INITIAL_STATE, action) {
       return state
   }
 }
+
+export default definitions
