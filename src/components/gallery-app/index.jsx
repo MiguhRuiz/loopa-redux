@@ -6,13 +6,22 @@ import User from '../user/index.jsx'
 
 class Gallery extends React.Component {
   render() {
+    if(this.props.loading) {
+      return <div><h1>Loading...</h1></div>
+    }
     return(
       <div className="App">
         <Header />
         <div className="Gallery">
           <section className="GalleryList">
             <Add />
-            <User photo="bla" username="me" />
+            {
+              this.props.users.map((user) => {
+                return(
+                  <User photo={user.avatar_url} username={user.login} />
+                )
+              })
+            }
           </section>
         </div>
       </div>
