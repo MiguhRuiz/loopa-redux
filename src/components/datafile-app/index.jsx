@@ -5,10 +5,14 @@ import Datafile from '../user-datafile/index.jsx'
 
 class DatafileApp extends React.Component {
   render() {
+    const user = this.props.currentUser
+    if(!user) {
+      return <div><h1>Loading...</h1></div>
+    }
     return(
       <div className="App">
         <Header />
-        <Datafile photo="me.png" name="Mac Intosh" email="me@fully.dev"/>
+        <Datafile photo={user.avatar_url} name={user.login} email={user.email}/>
       </div>
     )
   }
