@@ -50,7 +50,7 @@ export function createUser(user, token) {
     method: 'PUT',
     uri: `${uri}/memberships/${user}`,
     headers: {
-      'Authorization': `Bearer ${token}`
+      'Authorization': `Bearer ${token}`,
       'User-Agent': 'Loopa'
     }
   })
@@ -68,7 +68,7 @@ export function createUserSuccess(newUser) {
   }
 }
 
-export function fetchUsersFailure(error) {
+export function createUserFailure(error) {
   return {
     type: CREATE_USER_FAILURE,
     payload: error
@@ -80,7 +80,7 @@ export function fetchUser(i, token) {
     method: 'GET',
     uri: `${uri}/memberships/${i}`,
     headers: {
-      'Authorization': `Bearer ${token}`
+      'Authorization': `Bearer ${token}`,
       'User-Agent': 'Loopa'
     }
   })
