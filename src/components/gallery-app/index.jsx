@@ -6,7 +6,7 @@ import User from '../user/index.jsx'
 
 class Gallery extends React.Component {
   render() {
-    if(this.props.loading) {
+    if(this.props.userList.loading) {
       return <div><h1>Loading...</h1></div>
     }
     return(

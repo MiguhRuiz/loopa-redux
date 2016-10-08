@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { fetchUsers, fetchUsersSuccess, fetchUsersFailure } from '../actions/posts'
+import { fetchUsers, fetchUsersSuccess, fetchUsersFailure } from '../actions/users'
 
 import gallery from '../components/gallery-app'
 
