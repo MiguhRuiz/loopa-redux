@@ -11,10 +11,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchPosts: () => {
-      dispatch(fetchUsers()).then((response) => {
-        !response.error ? dispatch(fetchUsersSuccess(response.payload)) : dispatch(fetchUsersFailure(response.payload))
-      })
+    fetchUsers: () => {
+      dispatch(fetchUsers())
     }
   }
 }

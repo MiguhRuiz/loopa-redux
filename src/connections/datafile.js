@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { fetchUser, fetchUserSuccess, fetchUserFailure } from '../actions/posts'
+import { fetchUser, fetchUserSuccess, fetchUserFailure } from '../actions/users'
 
 import datafile from '../components/datafile-app'
 
@@ -11,7 +11,7 @@ const mapStateToProps = (globalState, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchPost: (id) => {
+    fetchUser: (id) => {
       dispatch(fetchUser(id)).then((response) => {
         !response.error ? dispatch(fetchUserSuccess(response.payload)) : dispatch(fetchUserFailure(response.payload))
       })
@@ -19,6 +19,6 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-const DatafileConnection = connect(mapStateToProps, mapDispatchToProps)(gallery)
+const DatafileConnection = connect(mapStateToProps, mapDispatchToProps)(datafile)
 
 export default DatafileConnection

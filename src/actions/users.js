@@ -1,4 +1,4 @@
-import request from 'request-promise'
+import axios from 'axios'
 
 export const FETCH_USERS = "FETCH_USERS"
 export const FETCH_USERS_SUCCESS = "FETCH_USERS_SUCCESS"
@@ -17,18 +17,18 @@ const org = 'loopa-redux-example'
 const uri = api + org
 
 export function fetchUsers() {
-  const request = request({
-    method: 'GET',
-    uri: `${uri}/members`,
-    headers: {
-      'User-Agent': 'Loopa'
+  return (dispatch, getState) => {
+    axios.get(`${uri}/members`, {
+      headers: {
+        'User-Agent': 'Loopa'
+      }
+    }).then((response) => {
+        dispatch(fetchUsersSuccess(response.data))
+      })
+      .catch((err) => {
+        dispatch(fetchUsersFailure(err))
+      })
     }
-  })
-
-  return {
-    type: FETCH_USERS,
-    payload: request
-  }
 }
 
 export function fetchUsersSuccess(users) {
@@ -46,19 +46,19 @@ export function fetchUsersFailure(error) {
 }
 
 export function createUser(user, token) {
-  const request = request({
-    method: 'PUT',
-    uri: `${uri}/memberships/${user}`,
-    headers: {
-      'Authorization': `Bearer ${token}`,
-      'User-Agent': 'Loopa'
+  return (dispatch, getState) => {
+    axios.put(`${uri}/memberships/${user}`, {
+      headers: {
+        'User-Agent': 'Loopa'
+      }
+    }).then((response) => {
+        dispatch(createUserSuccess(response.data))
+      })
+      .catch((err) => {
+        dispatch(createUserFailure(err))
+      })
     }
-  })
 
-  return {
-    type: CREATE_USER,
-    payload: request
-  }
 }
 
 export function createUserSuccess(newUser) {
@@ -76,19 +76,19 @@ export function createUserFailure(error) {
 }
 
 export function fetchUser(i, token) {
-  const request = request({
-    method: 'GET',
-    uri: `${uri}/memberships/${i}`,
-    headers: {
-      'Authorization': `Bearer ${token}`,
-      'User-Agent': 'Loopa'
+  return (dispatch, getState) => {
+    axios.get(`${uri}/memberships/${i}`, {
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'User-Agent': 'Loopa'
+      }
+    }).then((response) => {
+        dispatch(fetchUserSuccess(response.data))
+      })
+      .catch((err) => {
+        dispatch(fetchUserFailure(err))
+      })
     }
-  })
-
-  return {
-    type: FETCH_USER,
-    payload: request
-  }
 }
 
 export function fetchUserSuccess(user) {

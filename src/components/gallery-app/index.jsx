@@ -5,6 +5,9 @@ import Add from '../add-button/index.jsx'
 import User from '../user/index.jsx'
 
 class Gallery extends React.Component {
+  componentWillMount() {
+    this.props.fetchUsers()
+  }
   render() {
     if(this.props.userList.loading) {
       return <div><h1>Loading...</h1></div>
@@ -16,7 +19,7 @@ class Gallery extends React.Component {
           <section className="GalleryList">
             <Add />
             {
-              this.props.users.map((user) => {
+              this.props.userList.users.map((user) => {
                 return(
                   <User photo={user.avatar_url} username={user.login} />
                 )
