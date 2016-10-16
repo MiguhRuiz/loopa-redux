@@ -9,7 +9,7 @@ class NewForm extends React.Component {
       <div className="App">
         <Header />
         <h1> Añadir un nuevo desarrollador a la aplicación</h1>
-        <Add />
+        <Add createUser={this.props.createUser} />
       </div>
     )
   }
