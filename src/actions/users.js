@@ -49,6 +49,7 @@ export function createUser(user, token) {
   return (dispatch, getState) => {
     axios.put(`${uri}/memberships/${user}`, {
       headers: {
+        'Authorization': `Bearer ${token}`,
         'User-Agent': 'Loopa'
       }
     }).then((response) => {

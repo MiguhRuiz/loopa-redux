@@ -7,7 +7,7 @@ import { Router, Route, Link, browserHistory } from 'react-router'
 
 import Gallery from './connections/gallery'
 import Datafile from './connections/datafile'
-import AddForm from './components/new-app/index.jsx'
+import AddForm from './connections/new'
 
 import './assets/index.css';
 
