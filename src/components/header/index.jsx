@@ -8,7 +8,9 @@ class Header extends React.Component {
   render() {
     return(
       <div className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <a href="/">
+          <img src={logo} className="App-logo" alt="logo" />
+        </a>
         <h2>Bienvenido al directorio de Loopa</h2>
       </div>
     )

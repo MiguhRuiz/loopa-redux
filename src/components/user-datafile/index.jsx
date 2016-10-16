@@ -6,20 +6,14 @@ class Datafile extends React.Component {
       <div className="Datafile">
         <div className="Datafile-intro">
           <img src={this.props.photo} alt="Profile"/>
-          <h1 className="Datafile-intro-name">{this.props.name}</h1>
+          <a href={this.props.url}>
+            <h1 className="Datafile-intro-name">{this.props.name}</h1>
+          </a>
         </div>
         <div className="Datafile-extra">
           <div className="Datafile-extra-field">
-            <p className="Datafile-extra-helper">Email Address: </p>
-            <p className="Datafile-extra-data">{this.props.email}</p>
-          </div>
-          <div className="Datafile-extra-field">
-            <p className="Datafile-extra-helper">Email Address: </p>
-            <p className="Datafile-extra-data">{this.props.email}</p>
-          </div>
-          <div className="Datafile-extra-field">
-            <p className="Datafile-extra-helper">Email Address: </p>
-            <p className="Datafile-extra-data">{this.props.email}</p>
+            <p className="Datafile-extra-helper">Cargo: </p>
+            <p className="Datafile-extra-data">{this.props.role}</p>
           </div>
         </div>
       </div>
