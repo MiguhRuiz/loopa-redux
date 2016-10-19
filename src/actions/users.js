@@ -47,10 +47,13 @@ export function fetchUsersFailure(error) {
 
 export function createUser(user, token) {
   return (dispatch, getState) => {
-    axios.put(`${uri}/memberships/${user}`, {
+    axios({
+      method: 'put',
+      url: `${uri}/memberships/${user}`,
       headers: {
         'Authorization': `Bearer ${token}`,
-        'User-Agent': 'Loopa'
+        'User-Agent': 'Loopa',
+        'Content-Length': 0
       }
     }).then((response) => {
         dispatch(createUserSuccess(response.data))
