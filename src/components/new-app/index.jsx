@@ -13,7 +13,11 @@ class NewForm extends React.Component {
           <Err />
         </div>
       )
-    } else {
+    }
+    else if(this.props.newUser.user) {
+      window.location.href = '/'
+    }
+    else {
       return(
         <div className="App">
           <Header />
