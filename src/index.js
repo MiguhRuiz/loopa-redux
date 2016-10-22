@@ -6,7 +6,7 @@ import configureStore from './store/configureStore'
 import { Router, Route, Link, browserHistory } from 'react-router'
 
 import ReactGA from 'react-ga'
-
+ReactGA.initialize('UA-71890885-4')
 function pageView() {
   ReactGA.set({ page: window.location.pathname })
   ReactGA.pageview(window.location.pathname)
