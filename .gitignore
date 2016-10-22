@@ -16,3 +16,8 @@ npm-debug.log
 
 # Config file
 config.js
+
+# Firebase files
+.firebaserc
+database.rules.json
+firebase.json
