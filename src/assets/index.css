@@ -3,3 +3,41 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.Datafile {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Datafile-extra {
+  display: block;
+  margin: 0 auto;
+}
+
+.Datafile-extra-field {
+  display: inline-flex;
+}
+
+.Datafile-extra-helper {
+  margin-right: 1em;
+}
+
+.Datafile-intro img {
+  max-width: 100%
+}
+
+.GalleryList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.User {
+  margin-bottom: 1em;
+  margin-right: 1em;
+}
+
+.User img {
+  width: 50%
+}

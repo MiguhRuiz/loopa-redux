@@ -16,8 +16,8 @@ class Gallery extends React.Component {
       <div className="App">
         <Header />
         <div className="Gallery">
+          <Add />
           <section className="GalleryList">
-            <Add />
             {
               this.props.userList.users.map((user) => {
                 return(
