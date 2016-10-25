@@ -14,6 +14,17 @@ Then, inside the folder...
 ```bash
 $ cd loopa-redux
 ```
+**Extra:** Create a `config.js` file
+```bash
+touch config.js
+```
+```javascript
+const config = {}
+
+config.token = process.env.TOKEN || 'catsareawesomeiftheyusegit'
+
+module.exports = config
+```
 
 Install all packages(both server and client, **might take a bit of time**):
 ```bash
